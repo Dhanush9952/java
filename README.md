@@ -50,7 +50,7 @@ class Class_Name{
 }
 
 **Object creation Syntax:**
-Class_Name Object = new Class_Name();
+<code>Class_Name Object = new Class_Name();</code>
 
 **Java Compilation?**
 Javac stands for Java Compiler. After compilation it will create a class file in the same folder. These class files are nothing but the bytecodes.
@@ -149,9 +149,9 @@ Casting between Primitive type
 i) For converting smaller types to larger ones, no need to use explicit cast. It automatically converts. Eg: int to float, int to long,..
 ii) To convert larger values to smaller types use explicit cast.
 **Syntax: **
-(typename) value
+<code>(typename) value</code>
 **Eg:**
-(int) (x/y);
+<code>(int) (x/y);</code>
 
 **Casting between Object types**
 Syntax: (classname) object
@@ -159,20 +159,20 @@ Object of one class can be cast into an object of another class. For this the cl
 **Syntax:**
 (classname) object
 **Eg:**
-GreenApple a;
+<code>GreenApple a;
 Apple a2;
 a = new GreenApple();
-a2 = (Apple) a;
+a2 = (Apple) a;</code>
 Objects can also be cast to interfaces, but the interface has to be implemented from its class or superclass.
 
 
 **Converting primitive types to Objects and vice versa**
 java.lang package includes several special classes that correspond to each primitive data type. Integer for int type, Float for float type, etc.,
 Eg:
-Integer intObject = new Integer(35);	
+<code>Integer intObject = new Integer(35);	
 //converts value(primitive) into object
 To convert objects back to primitive:
-int theInt = intObject.intValue();	// returns 35
+int theInt = intObject.intValue();	// returns 35</code>
 
 
 
@@ -187,28 +187,28 @@ int theInt = intObject.intValue();	// returns 35
 **Arrays**
 Array is used to store multiple values / list of items. Arrays can contain any type of values but we cannot store different types in a single array. (Like array of integers, array of strings,..)
 An array is a finite ordered collection of homogeneous data elements.
-Syntax: <data_type> <arrayName>[ ] ;
+Syntax: <code><data_type> <arrayName>[ ] ;
 Eg: int temps[ ]; 
 or 
-int[ ] temps;
+int[ ] temps;</code>
 
 **Allocating memory for an array**
-Syntax: <arrayName> = new <type>[<size>];
-Eg: x = new int [100];
+Syntax: <code><arrayName> = new <type>[<size>];</code>
+Eg: <code>x = new int [100];</code>
 
 **Defining and allocating memory together**
-Syntax: <type> <arrayName> [ ] = new <type> [<size>];
-Eg: int x [ ] = new int [100];
+Syntax: <code><type> <arrayName> [ ] = new <type> [<size>];</code>
+Eg: <code>int x [ ] = new int [100];</code>
 
 **2D Arrays**
-Eg: int myArray [ ] [ ] = {{1, 2, 3}, {4, 5, 6}};
+Eg: <code>int myArray [ ] [ ] = {{1, 2, 3}, {4, 5, 6}};</code>
 
 **Creating Array Objects**
 There are 2 ways:
 Using a new operator to create a new instance of array.
-Eg: String[ ] names = new String[10];
+Eg: <code>String[ ] names = new String[10];</code>
 or
-int[ ] temps = new int[99];
+<code>int[ ] temps = new int[99];</code>
 
 When you create an array object using new, all its elements are initialized for you (0 for numeric arrays, false for boolean, ‘\0’ for character arrays, and null for everything else). You can also create and initialize an array at the same time.
 
@@ -243,23 +243,23 @@ default: statement;
 **For loop**
 It is used to execute a block of statements repeatedly for a certain number of times.
 syntax:
-for(initial_value; test_condition; increment) {
+<code>for(initial_value; test_condition; increment) {
 statement;
-}
+}</code>
 
 **While loop**
 The while loop is used to repeat a statement or block of statements as long as the condition is true.
 Syntax:
-while (condition) {
+<code>while (condition) {
  bodyOfLoop;
-}
+}</code>
 
 **Dowhile loop**
 while loops test the condition before looping,making it possible that the body of the loop will never execute if the condition is false the first time it’s tested.
 syntax:
-do {
+<code>do {
  bodyOfLoop;
-} while (condition)
+} while (condition)</code>
 
 **Constants**
 Constants are useful for setting global states in a method or object, or for giving meaningful
@@ -269,18 +269,18 @@ instance or class variables, not for local variables.
 A constant variable is something that does not change.
 Eg: the value of pi = 3.1415..
 The only way to define constants in Java is by using the final keyword.
-Eg: final int val = 0;      //constant variable ‘val’
+Eg: <code>final int val = 0;      //constant variable ‘val’</code>
 
 **Defining Methods**
 **Syntax:**
-return_type method_name (type1 arg1, type2 arg2) {
+<code>return_type method_name (type1 arg1, type2 arg2) {
 …………..
 …………..
-}
+}</code>
 
 For a method that is returning an array object, use square brackets after the type.
 **Syntax:**
-int[ ] makeRange(int upper, int lower) { …. }
+<code>int[ ] makeRange(int upper, int lower) { …. }</code>
 
 **this keyword**
 this refers to the current object, and you can use it anywhere that object might appear - in dot notation to refer to the object’s instance variables, as an argument to a method, as the return value for the current method, and so on.
@@ -288,12 +288,12 @@ this refers to the current object, and you can use it anywhere that object might
 ■ this can be used inside any method to refer to the current object.
 
 Eg: this.x;
-this.myMethod(this);
+<code>this.myMethod(this);
 ……..
-return this;
+return this;</code>
 
 Eg: 
-class A{
+<code>class A{
 void m() { System.out.println(“Hello m”); }
 void n();
 System.out.println(“hello n”);
@@ -308,21 +308,21 @@ A a = new A();
 a.n();
 }
 }
-
+</code>
 this keyword is used;
 - To access the instance variables and methods of the current object.
 - To invoke the current class constructor using this() or this(args).
 - To pass the current object as an argument to another method or constructor.
 - To return the current object from a method.
 - To resolve the ambiguity between instance variables and local variables that have the same name.
-Ref: https://javabeginnerstutorial.com/core-java-tutorial/this-keyword-java/
+Ref: <link>https://javabeginnerstutorial.com/core-java-tutorial/this-keyword-java/</link>
 
 Eg: for different types of this. declarations
 
 
 **Passing arguments to methods**
 Primitive types are passed by value, object/instance of class are passed by reference.
-Eg: class RangeClass {
+Eg: <code>class RangeClass {
 int[] makeRange (int lower, int upper) {
 int arr[] = new int[ (upper - lower) + 1 ];
 for (int i = 0; i < arr.length; i++) {
@@ -354,28 +354,28 @@ System.out.println("]");
     rc.methodTwo();
 }
 }
-
+</code>
 **Variable Scope and method definition**
-Eg: class ScopeTest {
+Eg: <code>class ScopeTest {
  int test = 10;		//instance variable / class variable
  void printTest () {
  int test = 20;		//local variable
  System.out.println(“test = “ + test);		// output will be 20 
  }
-}
+}</code>
 
 The local variable hides the instance variable. To print the value of an instance variable we have to use this.test to refer to the instance variable.
 
 **Class Methods**
 To define class methods, use the static keyword in front of the method definition, just as you
 would create a class variable. For example, the max class method might have a signature like this:
-Eg: static int max (int arg1, int arg2) { ... }
+Eg: <code>static int max (int arg1, int arg2) { ... }</code>
 
 **The signature for the main() method:**
-public static void main (String args[]) 
+<code>public static void main (String args[]) 
 {
 ……..
-}
+}</code>
 Here’s a run-down of the parts of the main() method:
 - ■ **public** means that this method is available to other classes and objects. The main()
 - method must be declared public.
@@ -393,13 +393,13 @@ initial variables or creating instances of any classes you may have declared.
 
 **Arguments**
 The arguments that we pass in the java program will be stored as an array of strings. To treat them as non-strings we have to convert them into whatever the type we want.
-Eg: for (int i = 0; i < args.length; i++) {
+Eg: <code>for (int i = 0; i < args.length; i++) {
  sum += args[i];
- }
+ }</code>
 Here the code will get an error on compilation because sum is of int type and args[i] is of array type. To solve this error we should write as:
-for (int i = 0; i < args.length; i++) {
+<code>for (int i = 0; i < args.length; i++) {
 sum += Integer.parseInt(args[i]);
- }
+ }</code>
 
 **Constructors**
 - ■ Constructors always have the same name as the class.
@@ -415,9 +415,9 @@ Constructors cannot be overloaded technically. But
 **Finalizer Method**
 Finalizer methods are called just before the object is garbage collected and its memory reclaimed. It is the opposite of the constructor method.
 Syntax:
-void finalize() {
+<code>void finalize() {
  ...
-}
+}</code>
 In most cases we don’t need to use finalize.
 
 **Naming Conventions**
@@ -435,7 +435,7 @@ When we want to use some special class defined somewhere then we should use impo
 Eg: import java.lang.*;
 
 **Command Line Input**
-public class Echo
+<code>public class Echo
 {
 public static void main(String args[]) 
 { 
@@ -446,7 +446,7 @@ for (int i=0;i<args.length;i++)
 }
 System.exit(0);
 }
-}
+}</code>
 
 Output:
 
