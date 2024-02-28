@@ -32,17 +32,17 @@ Bytecodes are a set of instructions that looks similar to machine code but not l
 
 
 **What is an object?**
-■ An instance of a class is another word for an actual object. 
-■ To work with data represented by the class, we need a variable for the class. It is called an object.
-■ It should start with uppercase and should be a noun.
+- ■ An instance of a class is another word for an actual object. 
+- ■ To work with data represented by the class, we need a variable for the class. It is called an object.
+- ■ It should start with uppercase and should be a noun.
 
 **Two main components of classes and objects are: **
 Attributes (variables)
 Behaviors (methods)
 
 **What are Methods?**
-■ Methods are the functions defined inside the classes that operate on instances (Objects) of those classes. 
-■ It should start with lowercase and should be a verb.
+- ■ Methods are the functions defined inside the classes that operate on instances (Objects) of those classes. 
+- ■ It should start with lowercase and should be a verb.
 
 **Class creation Syntax:**
 class Class_Name{
@@ -65,8 +65,8 @@ Java interpreter is simply called java. After compiling(creating bytecode/class 
 Eg: java HelloWorld
 
 **What is a class?**
-A class is a template for multiple objects with similar features. 
-A class library is a set of classes.
+- A class is a template for multiple objects with similar features. 
+- A class library is a set of classes.
 
 **Strings**
 String is a part of the class library.
@@ -76,9 +76,8 @@ Encapsulation in java is the process of wrapping code and data together into a s
 Eg: capsule
 
 **Inheritance**
-Inheritance in java is a mechanism in which one object acquires all the properties and behaviors of the parent object.
-
-An interface is a collection of method names, without actual definitions, that indicate that a class has a set of behaviors in addition to the behaviors the class gets from its superclasses. 
+- Inheritance in java is a mechanism in which one object acquires all the properties and behaviors of the parent object.
+- An interface is a collection of method names, without actual definitions, that indicate that a class has a set of behaviors in addition to the behaviors the class gets from its superclasses. 
 
 **Polymorphism**
 It is the ability of a programming language to process objects depending on their class.
@@ -311,11 +310,11 @@ a.n();
 }
 
 this keyword is used;
-To access the instance variables and methods of the current object.
-To invoke the current class constructor using this() or this(args).
-To pass the current object as an argument to another method or constructor.
-To return the current object from a method.
-To resolve the ambiguity between instance variables and local variables that have the same name.
+- To access the instance variables and methods of the current object.
+- To invoke the current class constructor using this() or this(args).
+- To pass the current object as an argument to another method or constructor.
+- To return the current object from a method.
+- To resolve the ambiguity between instance variables and local variables that have the same name.
 Ref: https://javabeginnerstutorial.com/core-java-tutorial/this-keyword-java/
 
 Eg: for different types of this. declarations
@@ -378,13 +377,13 @@ public static void main (String args[])
 ……..
 }
 Here’s a run-down of the parts of the main() method:
-■ **public** means that this method is available to other classes and objects. The main()
-method must be declared public.
-■ **static **is the keyword. Here it refers to a class method (Method belonging to a class). We don’t need an object to call this method.
-■ **void **is the return type, void indicates that the main() method doesn’t return anything.
-■ **main() **is the method name. We don’t call the main method anywhere, so it's the starting point.
-■ **String **refers to String class.
-■ **args[ ]** is the array of string objects. It is the array of any(variable) size. We can write anything instead of args like String x[ ].
+- ■ **public** means that this method is available to other classes and objects. The main()
+- method must be declared public.
+- ■ **static **is the keyword. Here it refers to a class method (Method belonging to a class). We don’t need an object to call this method.
+- ■ **void **is the return type, void indicates that the main() method doesn’t return anything.
+- ■ **main() **is the method name. We don’t call the main method anywhere, so it's the starting point.
+- ■ **String **refers to String class.
+- ■ **args[ ]** is the array of string objects. It is the array of any(variable) size. We can write anything instead of args like String x[ ].
 
 (NOTE: Java sees everything as string objects.)
 
@@ -403,12 +402,12 @@ sum += Integer.parseInt(args[i]);
  }
 
 **Constructors**
-■ Constructors always have the same name as the class.
-■ Constructors don’t have a return type.
-■ The constructor is executed before the main function in Java. 
-■ A constructor is a special method/function that is used to initialize an object. 
-■ The constructor is called when an object is created using the new keyword. 
-■ A constructor can have parameters, and it can be used to initialize the instance variables of the class.
+- ■ Constructors always have the same name as the class.
+- ■ Constructors don’t have a return type.
+- ■ The constructor is executed before the main function in Java. 
+- ■ A constructor is a special method/function that is used to initialize an object. 
+- ■ The constructor is called when an object is created using the new keyword. 
+- ■ A constructor can have parameters, and it can be used to initialize the instance variables of the class.
 
 **Overriding Constructors**
 Constructors cannot be overloaded technically. But
