@@ -127,11 +127,11 @@ ObjectName.variable;
 Class variables are created and stored in class itself. Their values are applied to the class and all of its instances. 
 
 Class variable is created by using the static keyword before the variable.
-Eg: class FamilyMember {
+Eg: <code>class FamilyMember {
 static string surname = “Johnson”;
 String name;
 Int age;
-}
+}</code>
 
 
 **Reference to objects**
