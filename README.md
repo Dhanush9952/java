@@ -1,8 +1,8 @@
 # java Practice
 {google_docs}https://docs.google.com/document/d/1f5gtRUDHb__Yanq6u325WVhNtRa4S9iBpcztFmu8Sik/edit?usp=sharing{/google_docs}
-JAVA Notes for INTERVIEW Preparation
+# JAVA Notes for INTERVIEW Preparation
 
-Why do we use Object Oriented Programming?
+<b>Why do we use Object Oriented Programming?</b>
 To create an 
 Organized, 
 Flexible, 
