@@ -2,8 +2,9 @@ import java.io.*;
 
 class InterestCalculator
 {
-public static void main(String args[]) throws IOException 
-{
+public static void main(String args[]) //throws IOException 
+{ 
+try{
 //Float principalAmount = new Float(0);
 //Float rateOfInterest = new Float(0);
 //int numberOfYears = 0;
@@ -33,4 +34,9 @@ numberOfYears = Integer.parseInt(tempString);	// converts string into integer
 // Input is over: calculate the interest
 float interestTotal = principalAmount*rateOfInterest*numberOfYears;
 System.out.println("Total Interest = " + interestTotal) ;
-}}
+System.out.printf("Formatted Output = %.4f\n", interestTotal) ;
+System.out.printf("Width of 20 characters before decimal = %20.4f\n", interestTotal) ;
+}
+catch(Exception ex) { }
+}
+}

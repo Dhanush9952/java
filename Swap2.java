@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Swap2{
-public static void main(String args[]){
+public static void main(String x[]){
 	int value1, value2;
 Scanner s = new Scanner(System.in);
 System.out.println("Enter 2 numbers: ");
