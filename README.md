@@ -449,6 +449,541 @@ System.exit(0);
 }</code>
 
 Output:
+Numeric Input to Program
+import java.lang.*;
+
+class Calculator{
+double i;
+double x = Math.sqrt(i);
+}
+
+class Example {
+public static void main(String args[]) {
+Calculator a= new Calculator ();
+a.i= Integer.parseInt(args[0]);
+System.out.println("Square root of "+a.i+" is "+a.x);
+}
+}
+
+Here, Integer.parseInt(args[0]) gets the string input and converts string into integer using Integer.parseInt. 
+
+2) Input with Scanner class
+Scanner is a predefined class used for reading the data dynamically from the keyboard.
+Scanner can read values as integer, float and also string. 
+
+
+Import Scanner class using import statement.
+Create an object for Scanner class.
+Define variables to get input from the keyboard.
+Assign variables to Object_Name.nextInt() to get input. (nextInt for reading one after another)
+Eg: To get char input
+Scanner sc = new Scanner(System.in);
+char ch = sc.next().charAt(0);
+
+(Using Scanner and ArrayList)
+import java.util.*;
+class SimpleArrayList{
+public static void main(String args[])
+{
+int sum = 0;
+float avg = 0;
+ArrayList <Integer> l = new ArrayList<Integer>();  //Array list with array object ‘l’
+System.out.println("Enter the input ");
+Scanner input = new Scanner(System.in);
+while (input.hasNextInt())	//Reads input till we give integer values
+{
+l.add(input.nextInt());
+}
+for (int i = 0; i < l.size(); i++) {
+sum = sum+l.get(i);	//takes the ith element of array list ‘l’
+}
+avg = sum/(l.size());
+System.out.println("Average : " + avg);
+}}
+
+3) Input using InputStreamReader class
+DataInputStream (depreciated) / BufferedReader & InputStreamReader
+import java.io.*;
+class InterestCalculator
+{
+public static void main(String args[]) // throws IOException 
+{
+try{
+float principalAmount = 0;
+float rateOfInterest = 0;
+int numberOfYears = 0;
+String tempString;
+//DataInputStream in = new DataInputStream(System.in);
+BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+//BufferedReader & InputStreamReader classes are defined in 'io' package, 'reader' is the object
+String tempString;
+System.out.println("Enter Principal Amount: ");
+System.out.flush();			
+//clean the buffer
+tempString = reader.readLine();
+principalAmount = Float.parseFloat(tempString);	
+//string value is converted into float value
+System.out.println("Enter Rate of Interest");
+System.out.flush();
+tempString = reader.readLine();
+rateOfInterest = Float.parseFloat(tempString);
+System.out.println("Enter Number of Year");
+System.out.flush();
+tempString = reader.readLine();
+numberOfYears = Integer.parseInt(tempString);
+// converts string into integer
+// Input is over: calculate the interest
+float interestTotal = principalAmount*rateOfInterest*numberOfYears;
+System.out.println("Total Interest = " + interestTotal) ;
+System.out.printf("Formatted Output = %.4f\n", interestTotal);  
+System.out.printf("Width of 20 characters before decimal = %20.4f\n", interestTotal) ;
+}
+catch(Exception ex) { }
+}}
+
+Here, %.4f refers to 4 digits after decimal, \n for new line as we have given printf, which is a formatted print statement, %20.4f refers to 20 characters before decimal and 4 digits after decimal.
+
+Scope Rule
+Class Scope
+import java.util.*;
+class Box{
+	float x = 1;
+	float y = 2;
+	float length = 12;
+	float width = 6;
+	double area(){
+		return(length*width);
+	}
+}
+class Circle{
+	float x = 11;
+	float y = 12;
+	float radius = 5;
+	double area(){
+		return(3.14 * radius * radius);
+	}
+}
+class ScopeRule{
+	static float x = 10;
+	float y = 20;
+public static void main(String args[])	{
+	Box b1 = new Box();
+	Circle c1 = new Circle();
+	System.out.println("Main class data: " + x);
+	System.out.println("Box class data: " + b1.x);
+	System.out.println("Circle class data: " + c1.x);
+	System.out.println("======================");
+	System.out.println("Box Area: " + b1.area());
+	System.out.println("Circle Area: " + c1.area());
+}
+}
+
+Block Scope
+
+
+Instance variables and Class variables
+Java does not allow global variables.
+Every variable in Java must be declared inside a class.
+The keyword static is used to make a variable just like a global variable.
+A variable declared with a static keyword is called a class variable.
+It acts like a global variable, that is, there is only one copy of the variable associated with the class. That is, one copy of the variable regardless of the number of instances of the class.
+
+Static Method
+Static methods have the keyword static before the method name.
+We don’t need an object to call a static method.
+Eg: public static class Circle{
+	float x = 11;
+	float y = 12;
+	float radius = 5;
+	double area(){
+		return(3.14 * radius * radius);
+	}
+}
+class Box{
+	float x = 1;
+	float y = 2;
+	float length = 12;
+	float width = 6;
+	double area(){
+		return(length*width);
+	}
+}
+
+class ScopeRule{
+	static float x = 10;
+	float y = 20;
+public static void main(String args[]) {
+	Box b1 = new Box();
+System.out.println("Box class data: " + b1.x);
+System.out.println("Circle class data: " + Circle.area());
+}}
+
+Nested Class
+
+
+
+
+Static Nested class 
+A static nested class is a static member of the outer class. It does not have access to the instance variables / objects of the outer class.
+You can create an instance / object of a static nested class without creating an instance of the outer class.
+Eg: public class Outer {
+    static class Nested {
+        void display() {
+            System.out.println("This is a static nested class.");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Outer.Nested nestedObj = new Outer.Nested();
+        nestedObj.display();
+    }
+}
+we use the dot (.) operator to create instances of inner classes using the outer class.
+
+29-02-2024
+Recursion in Java
+import java.util.*;
+class FactorialRecursive {
+	protected int factorial(int x){
+		if(x==0){
+			return 1;
+		} else {
+			return (x*factorial(x-1));
+		}
+	}
+	public static void main(String args[]){
+		FactorialRecursive x = new FactorialRecursive();
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter the number: ");
+		int userInput = s.nextInt();
+		//int userInput = Integer.parseInt(args[0]);
+		int calculatedValue = x.factorial(userInput);
+		System.out.println("The Factorial of " +  userInput + " is " + calculatedValue);
+	}
+}
+
+Output:
+
+
+IMPORTANT NOTE:
+The key is that each recursive call multiplies the current value of x with the result of the next smaller value. So, factorial(4) effectively multiplies 4 × 3 × 2 × 1, which equals 24.
+The base case (if (x == 0) or if (x == 1)) is crucial as it ensures that the recursion stops.
+
+Method Overriding
+It is used in runtime polymorphism.
+Method should have the same name as the parent class.
+Method should have the same parameters as the parent class.
+
+Super Keyword
+The super keyword in Java is a reference variable which is used to refer to immediate parent class members.
+Whenever you create an instance of a subclass, an instance of its parent class is created implicitly, which is referred to by super keyword.
+Eg: class Animal {
+String color="white";
+}
+class Dog extends Animal{
+String color = "black";
+void printColor() {
+System.out.printin(color);  	// refers to subclass color “black”
+System.out.println(super.color);	// refers to super class color “white”
+}}
+class TestSuperl{
+public static void main(String args[]) {
+Dog d = new Dog();
+d.printColor();
+}}
+
+
+super keyword can also be used to call super class methods.
+
+Eg: class Animal {
+void eat() {System.out.println("eating...");}
+}
+class Dog extends Animal{
+void eat() {System.out.println("eating bread...");}
+void bark() {System.out.println("barking...");}
+void work() {
+super.eat();	// calls the superclass method
+bark();
+eat();}
+}
+class TestSuper2{
+public static void main(String args([]) {
+Dog d = new Dog();
+d.work();
+}}
+Output:
+
+
+Invoking parent class constructor
+Eg: class Animal {
+Animal() {			// here Animal() is a constructor of super class
+System.out.println("animal is created");)
+}
+class Dog extends Animal {
+Dog() {			// here Dog() is a constructor of derived class
+super();		// this will call super class constructor - Animal()
+System.out.println ("dog is created");
+}
+
+class TestSuper3{
+public static void main(String args([]) {
+Dog d = new Dog () ;
+}
+
+Dynamic method dispatch / Runtime Polymorphism
+Dynamic method dispatch is a process in which a call to an overridden method is resolved at runtime rather than compile-time. Also, it is called Runtime polymorphism.
+In this process, an overridden method is called through the reference variable of a superclass. The determination of the method to be called is based on the object being referred to by the reference variable.
+
+Eg: class Bike{
+void run() { System.out.println("running") ;}
+}
+class Splendor extends Bike{
+void run() { System.out.println("running safely with 60km");}
+}
+class RuntimePolymorphism{
+public static void main(String args[]) {
+Splendor b1 = new Splendor();
+b1.run();
+Bike b2 = new Bike();
+b2.run();
+Bike b3 = new Splendor();	//Up casting
+b3.run();			// subclass method i.e., Splendor will be executed
+}}
+Output:
+
+
+
+**Abstraction**
+Abstraction is the process of hiding the implementation and showing only the functionality to the user.
+Abstraction lets you focus on what object does instead of how it does.
+A class declared with an abstract keyword is called an Abstract class.
+Abstract Rules
+An abstract class must be declared with an abstract keyword.
+It can have abstract and non-abstract methods.
+Abstract class cannot be instantiated.i.e,. we cannot create objects for abstract class.
+It can have constructors and static methods also.
+It can have final methods which will force the subclass not to change the body of the method.
+A subclass of an abstract class can be instantiated if it overrides each of the abstract
+methods of its super class and provide an implementation (i.e., a method body of all
+of them).
+Abstract classes can have only single inheritance.
+
+
+
+Eg:
+
+
+
+Final class
+A class declared with the final keyword cannot be inherited / extended.
+It is used to restrict the access of the item from its superclass to a subclass.
+
+
+Abstract class with constructor
+
+
+
+Data in the abstract class can be called using the super keyword in subclass.
+
+Access Modifiers
+
+
+
+
+
+
+Access specifiers can be prefixed before a class, method and a data member(variables).
+
+
+
+
+Syntax for compiling java package:
+javac -d directory java_file_name  
+Eg: javac -d . B.java
+
+The -d switch specifies the destination where to put the generated class file. You can use any directory name like /home (in case of Linux), d:/abc (in case of windows) etc. If you want to keep the package within the same directory, you can use . (dot).
+
+Syntax to run java package accessing program:
+java Package_Name.Class_Name
+Eg: java pack2.B
+
+
+**Private
+**When a class is private all its members with its default access specifiers are also private.
+Objects cannot be created outside of a private class.
+Private access modifier is accessible only within the class.
+
+Here, obj.msg() can access data in msg() even though it is declared private.
+
+
+If we make any class constructor private, we cannot create class objects outside of that class.
+
+**Protected**
+Protected access modifier is accessible within a package or from outside a package but through inheritance only.
+Protected access modifiers can be applied on data members(variables), method and constructor. It cannot be applied to the class.
+
+**Public**
+When a class is declared as public all its members with default access specifier are also public
+Public access modifier is accessible everywhere.
+
+**Default**
+If two classes are declared as default and are in different directories then those classes are not accessible by each other.
+
+**Package**
+A package is a container for the classes that are used to keep the class name space compartmentalized.
+It allows flexibility to give the same name but to many classes, that is to avoid namespace collision.
+The packages in Java provide a mechanism for partitioning the class name space into more manageable chunks.
+In fact, a package is both a naming and a visibility control mechanism.
+It supports reusability and maintainability.
+
+**Built-in Packages**
+Packages are nothing more than the way we organize files into different directories according to their functionality, usability as well as the category they should belong to . A Java package is a Java programming language mechanism for organizing classes into name spaces.
+Eg: javax.swing is a package in java providing all basic support in developing GUI project
+
+Code reusability is the main philosophy of Object-Oriented Programming.
+To power this advantage, Java has a number of packages called API bundled with the JDK.
+Packages are collections of classes and interfaces to facilitate a number of ready made solutions.
+A great knowledge of packages helps a Java developer to master a Java solution.
+
+API Built-in Java Packages
+
+
+A **package** is a collection of classes and each class is a collection of members and methods. Any class as well as any method and member in a package are accessible by a java program. This can be achieved by using an import statement. 
+
+
+Eg:
+java.util.Date toDay = new java.util.Date ( );
+System.out.println (toDay) ;
+
+The same thing but with import statement can be done as follows
+
+import java.util.Date;
+Date today = new Date ( );
+
+Accessing Package
+
+
+
+
+
+Procedure
+
+
+
+**Interface**
+An interface defines a set of methods but does not implement them.
+All members are final and all methods are abstract. 
+Static methods cannot be declared in an interface.
+An interface can extend one or more interfaces.
+An interface cannot implement another interface or class.
+
+If a class implements more than one interface, the interfaces are separated with commas.
+Methods that implement an interface must be declared public.
+
+Syntax: class DerivedClass_Name implements Interface_Name{ 
+…………….
+…………….
+}
+
+
+Syntax: interface Another_Interface_Name extends Interface_Name{
+………….
+…………
+}
+
+Most used interfaces in Java
+Iterator (in java.util package)
+Cloneable ()
+Serializable ()
+Comparable ()
+
+**int to string :** 
+int i=10;  
+String s=String.valueOf(i);
+
+**Math class**
+Math.abs() returns the absolute value of its parameter.
+Math.ceil() rounds a floating point value up to the nearest integer value. The rounded value is returned as a double.
+Math.floor() rounds a floating point value down to the nearest integer value.
+Math.max() returns the largest of its parameters.
+Math.min() returns the smallest parameter.
+Math.pow() takes two parameters and returns the first parameter raised to the power of the second parameter.
+
+Day Name Finder Formula:
+
+<code>
+ if (month == 1 || month == 2) {
+ month += 12;
+ year--;
+ }
+
+int q = day;
+int m = month;
+int K = year % 100;
+int J = year / 100;
+
+int h = (q + (13*(m + 1))/5 + K + K/4 + J/4 + 5*J) % 7;
+</code>
+
+**Interfaces**
+An interface is a completely abstract class that contains only abstract methods.
+Defined using the interface keyword.
+May contain only static final variables.
+Cannot contain a constructor because interfaces cannot be instantiated.
+Interfaces can extend other interfaces.
+A class can implement any number of interfaces.
+
+An interface is implicitly abstract. You do not need to use the abstract keyword while declaring an interface.
+Each method in an interface is also implicitly abstract, so the abstract keyword is not needed.
+Methods in an interface are implicitly public.
+A class can inherit from just one superclass, but can implement multiple interfaces.
+
+**instanceof**
+The instanceof operator in java is used to compare an object to a specified type. We can use it to check if an object is an instance of a class, an instance of a subclass, or an instance of a class that implements a particular interface. The instanceof operator is either returned true or false. 
+
+**Memory Allocation**
+Memory allocation in java specifies the mechanism where the computer programs and services are assigned dedicated virtual memory spaces. The Java Virtual Machine splits the memory into Stack and Heap Memory.
+
+**Stack Memory**
+In Java, stack memory is used for static memory allocation and thread execution. Methods, local variables, and reference variables are all stored in the Stack portion of memory.
+
+**Heap Memory**
+Any time an object is created and allocated in Java Heap Space, it is used.  In heap memory, new objects are often formed, and references to these objects are stored in stack memory. Garbage Collection, a discrete function, keeps flushing the memory used by previous objects that have no reference. A Heap Space object can have unrestricted access throughout the program.
+
+**Garbage Collection in Java**
+Garbage collection in java is a process of destroying runtime unused objects. Garbage collectors destroy the objects automatically. A garbage collector's key goal is to allow effective use of memory.
+
+There are two ways for requesting a JVM to run a garbage collector. 
+Using System.gc() method.
+Using Runtime.getRuntime().gc() method.
+
+Garbage Collection cannot be controlled by a program. A program can only request to run the garbage collector.
+
+**Exception Handling Keywords in Java**
+Exceptions are runtime errors.
+There are five keywords that we can use in exception handling.
+
+
+**1. try**
+We can write code that might throw an exception in the try block. A try block in Java must be followed by a catch block or finally block.
+**2. catch**
+In Java, the catch block is used to handle any exceptions that might occur in our software. We can only use it after the try block. For a single try block, we can use multiple catch blocks.
+
+**3. finally**
+In Java, the finally block is used to clean up code or release resources that are being used by the program. Whether or not the exceptions are dealt, the finally block is always executed.
+
+**4. throw**
+In Java, the keyword throw is used to throw an exception. It has the ability to throw exceptions explicitly. Using the throw keyword, we can throw either checked or unchecked exceptions.
+
+**5. throws**
+In Java, the throws keyword is used to declare an exception. Using the throws keyword, we can only declare checked exceptions. When we declare an exception, it is the programmer's responsibility to write the exception handling code.
+
+**User-defined Exception in Java**
+If we create our own exception, it is referred to as a Custom or User-defined Exception. Java allows us to create our own exception, which is essentially a derived class of Exception. To create our own exception, we must first create a class that extends the Exception class and represents user-defined exceptions. We must pass the string to the constructor of the super class, which is obtained by calling the getMessage() function of the newly created object.
+
+
 
 
 
