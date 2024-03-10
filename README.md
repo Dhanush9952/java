@@ -983,6 +983,158 @@ In Java, the throws keyword is used to declare an exception. Using the throws ke
 **User-defined Exception in Java**
 If we create our own exception, it is referred to as a Custom or User-defined Exception. Java allows us to create our own exception, which is essentially a derived class of Exception. To create our own exception, we must first create a class that extends the Exception class and represents user-defined exceptions. We must pass the string to the constructor of the super class, which is obtained by calling the getMessage() function of the newly created object.
 
+Exception handling is a powerful mechanism that handles runtime errors to maintain normal application flow.
+
+
+
+Threads
+Java is a multi-threaded programming language. This means that our program can make optimal use of available resources by running two or more components concurrently, with each component handling a different task.
+You can subdivide specific operations within a single application into individual threads that all run in parallel.
+
+
+
+
+
+
+
+There are two ways to create a thread.
+1. Extend the Thread class
+Inherit from the Thread class, override its run() method, and write the functionality of the thread in the run() method.
+Then you create a new object of your class and call it's start() method to run the thread.
+Example:
+class Loader extends Thread {
+  public void run() {
+    System.out.println("Hello");
+  }
+}
+
+class MyClass {
+  public static void main(String[ ] args) {
+    Loader obj = new Loader();
+    obj.start();
+  }
+}
+
+2. By Implementing the Runnable interface
+The other way of creating Threads is implementing the Runnable interface. Implement the run() method. Then, create a new Thread object, pass the Runnable class to its constructor, and start the Thread by calling the start() method.
+Example:
+class Loader implements Runnable {
+  public void run() {
+    System.out.println("Hello");
+  }
+}
+class MyClass {
+  public static void main(String[ ] args) {
+    Thread t = new Thread(new Loader());
+    t.start();
+  }
+}
+Implementing the Runnable interface is the preferred way to start a Thread, because it enables you to extend from another class, as well.
+
+
+
+
+
+ArrayList
+The Java API provides special classes to store and manipulate groups of objects. One such class is the ArrayList. Standard Java arrays are of a fixed length, which means that after they are created, they cannot expand or shrink.
+
+On the other hand, ArrayLists are created with an initial size, but when this size is exceeded, the collection is automatically enlarged.
+
+When objects are removed, the ArrayList may shrink in size. Note that the ArrayList class is in the java.util package, so it's necessary to import it before using it.
+
+Eg: ArrayList<String> colors = new ArrayList<String>(10);
+
+
+contains(): Returns true if the list contains the specified element
+get(int index): Returns the element at the specified position in the list
+size(): Returns the number of elements in the list
+clear(): Removes all of the elements from the list
+
+LinkedList vs. ArrayList
+The most notable difference between the LinkedList and the ArrayList is in the way they store objects.
+The ArrayList is better for storing and accessing data, as it is very similar to a normal array.
+The LinkedList is better for manipulating data, such as making numerous inserts and deletes.
+In addition to storing the object, the LinkedList stores the memory address (or link) of the element that follows it. It's called a LinkedList because each element contains a link to the neighboring element.
+
+HashMap 
+HashMap is used for storing data collections as key and value pairs. One object is used as a key (index) to another object (the value). The put, remove, and get methods are used to add, delete, and access values in the HashMap.
+
+Example:<code>
+import java.util.HashMap;
+public class MyClass {
+  public static void main(String[ ] args) {
+    HashMap<String, Integer> points = new HashMap<String, Integer>();
+    points.put("Amy", 154);
+    points.put("Dave", 42);
+    points.put("Rob", 733);
+    System.out.println(points.get("Dave")); 
+  }
+}</code>
+
+
+A HashMap cannot contain duplicate keys. Adding a new item with a key that already exists overwrites the old element.
+The HashMap class provides containsKey and containsValue methods that determine the presence of a specified key or value.
+If you try to get a value that is not present in your map, it returns the value of null.
+
+
+Iterator
+An Iterator is an object that enables to cycle through a collection, obtain or remove elements. 
+Before you can access a collection through an iterator, you must obtain one. Each of the collection classes provides an iterator() method that returns an iterator to the start of the  collection. By using this iterator object, you can access each element in the collection, one element at a time.
+
+The Iterator class provides the following methods:
+hasNext(): Returns true if there is at least one more element; otherwise, it returns false.
+next(): Returns the next object and advances the iterator.
+remove(): Removes the last object that was returned by next from the collection.
+
+Files
+The java.io package includes a File class that allows you to work with files.
+To start, create a File object and specify the path of the file in the constructor.
+Eg:
+import java.io.File;
+...
+File file = new File("C:\\data\\input-file.txt");
+
+Eg:<code>
+import java.io.File;
+public class MyClass {
+  public static void main(String[ ] args) {
+    File x = new File("C:\\sololearn\\test.txt");
+    if(x.exists()) {
+     System.out.println(x.getName() +  "exists!");
+    }
+    else { 
+     System.out.println("The file does not exist");
+    }
+  }
+}</code>
+The getName() method returns the name of the file.
+Note that we used double backslashes in the path, as one backslash should be escaped in the path String.
+
+Reading a file
+The constructor of the Scanner class can take a File object as input. To read the contents of a text file at the path "C:\\sololearn\\test.txt", we would need to create a File object with the corresponding path and pass it to the Scanner object.
+
+Eg:<code>
+try {
+  File x = new File("C:\\sololearn\\test.txt");
+  Scanner sc = new Scanner(x);      
+}
+ catch (FileNotFoundException e) {
+
+}
+</code>
+The Scanner class inherits from the Iterator, so it behaves like one. We can use the Scanner object's next() method to read the file's contents.
+
+It is always good practice to close a file when finished working with it. One way to do this is to use the Scanner's close() method.
+
+Multithreaded program
+
+When threads are in execution all these threads can exchange data among themselves.
+Java has built-in support for multithreading.
+Java Garbage Collector is a low priority thread.
+Everything about thread is readily defined in package called java.lang
+
+Keywords:
+currentThread, start, run, stop, sleep, yield, resume, suspend, setPriority, getPriority.
 
 
 
