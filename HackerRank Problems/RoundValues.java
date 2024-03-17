@@ -1,0 +1,36 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+class Result {
+    public static List<Integer> gradingStudents(List<Integer> grades) {
+    List<Integer> roundedGrades = new ArrayList<>();
+    for(int grade : grades){
+        if(grade < 38){
+            roundedGrades.add(grade);
+        } else {
+            int nextMultipleOf5 = (int) (Math.ceil(grade / 5.0) * 5);
+            if (nextMultipleOf5 - grade < 3) {
+                    roundedGrades.add(nextMultipleOf5);
+                    } else {
+                    roundedGrades.add(grade);
+                    }
+            }
+        }
+        return roundedGrades;
+        }
+
+}
+
+public class RoundValues {
+public static void main(String[] args) throws IOException {
+	RoundValues n = new RoundValues();
+	Scanner scan = new Scanner(System.in);
+	int num = scan.nextInt();
+	List<Integer> m = new ArrayList<>();
+	for(int i=0; i<num; i++){
+		m.add(scan.nextInt());
+	}
+	System.out.println(Result.gradingStudents(m));
+}}
