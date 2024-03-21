@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+class HighestAltitude {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+		int[] gain = new int[n];
+		int maxAltitude = 0;
+		int currentAltitude = 0;
+		
+        for(int i=0; i<n; i++){
+          gain[i] = scan.nextInt();
+          currentAltitude += gain[i];
+          maxAltitude = Math.max(maxAltitude, currentAltitude);
+        }
+		System.out.println(maxAltitude);
+    }
+}
