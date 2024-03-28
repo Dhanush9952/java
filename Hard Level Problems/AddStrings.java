@@ -6,6 +6,7 @@
 	Where |NUM1| and |NUM2| are the length of the strings.
 */
 
+/*
 public class AddStrings {
 
 	public static String reverseString(String str) {
@@ -80,8 +81,9 @@ public class AddStrings {
 	}
 
 }
+*/
 
-/*
+// num1 and num2 are two numbers given in string format. we have to add those two strings witout using conversion functions 
 import java.util.* ;
 import java.io.*; 
 public class Solution {
@@ -96,6 +98,7 @@ public class Solution {
         int carry=0;
         int i=0;
         int j=0;
+		
         while (i<n || j < m || carry!=0) {
             int local_sum = carry;
             if (i<n) {
@@ -114,4 +117,3 @@ public class Solution {
     }
 }
 
-*/
