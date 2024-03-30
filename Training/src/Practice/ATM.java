@@ -3,13 +3,14 @@ import java.util.Scanner;
 public class ATM {
 public static void main(String[] args) {
 	Scanner scan = new Scanner(System.in);
-	int balance = 1000;
+	int balance = 1000, option;
+	do {
 	System.out.println("1.Check Balance");
 	System.out.println("2.Withdraw Cash");
 	System.out.println("3.Deposit Amount");
 	System.out.println("4.Exit");
 	System.out.println("Enter an option: ");
-	int option = scan.nextInt();
+	option = scan.nextInt();
 	switch(option) {
 	case 1: System.out.println("Your account balance: " + balance);
 	break;
@@ -27,5 +28,6 @@ public static void main(String[] args) {
 	break;
 	default: System.out.println("");
 	}
+	} while(option>0 && option<5);
 }
 }

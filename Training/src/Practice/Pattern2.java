@@ -1,7 +1,5 @@
 package Practice;
-
 import java.util.Scanner;
-
 public class Pattern2 {
 	public static void main(String[] x) {
 	Scanner scan = new Scanner(System.in);
