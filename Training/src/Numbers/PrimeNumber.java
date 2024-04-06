@@ -8,7 +8,7 @@ public class PrimeNumber {
 		int n = sc.nextInt();
 		boolean res = true;
 		if(n <= 1) {
-			res = false;
+			res = false;  // 0 and 1 are not prime numbers 
 		}
 		for(int i=2; i<=Math.sqrt(n); i++) {
 			if(n % i == 0) {
