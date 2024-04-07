@@ -5,6 +5,15 @@ public class LinkedList {
 	
 	public void insert(int data) {
 		Node node = new Node();
+		//=====================
+		// Insert at Beginning
+		//=====================
+//		node.next = head;
+//		head = node;
+//		node.data = data;
+		//=================
+		// Insert at End
+		//===================
 		node.data = data;
 		node.next = null;
 		if(head == null) {
