@@ -30,4 +30,27 @@ public class LinkedList1 {
 		}
 		System.out.println(node.data);
 	}
+	
+	public void insertAtStart(int data) {
+		Node1 node1 = new Node1();
+		node1.data = data;
+		node1.next = null;
+		node1.next = head;
+		head = node1;
+	}
+	
+	public void insertAt(int index, int data) {
+		Node1 node = new Node1();
+		node.data = data;
+		node.next = null;
+		if(index == 0) {
+			insertAtStart(data);
+		}
+		Node1 n = head;
+		for(int i=0; i<index-1; i++) {
+			n = n.next;
+		}
+		node.next = n.next;
+		n.next = node;
+	}
 }
