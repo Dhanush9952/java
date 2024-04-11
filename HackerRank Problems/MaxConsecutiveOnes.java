@@ -26,3 +26,28 @@ public class MaxConsecutiveOnes {
         scanner.close();
     }
 }
+
+
+/*
+        String number = "";
+        int result = -1;
+        int line = 0;
+        while(n > 2) {
+            number = number + n%2;
+            n = n/2;
+        }
+        number = number + n%2 + n/2;
+        char[] arr = number.toCharArray();
+        for (char c : arr) {
+            if(c == '1') {
+                line++;
+                if(line > result) {
+                    result = line;
+                }
+            } else {
+                line = 0;
+            }
+        }
+        System.out.println(result);
+		
+*/

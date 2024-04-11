@@ -11,14 +11,16 @@ class KthCharacter {
         Scanner scan = new Scanner(System.in);
         int length = scan.nextInt();
         int kthValue = scan.nextInt();
-        String chars = scan.nextLine();
+		scan.nextLine();
+        String chars = scan.nextLine().trim();
         char[] ch = chars.toCharArray();
-        char[] rev = '';
-        for(int i=length-1; i>length; i--){
-          int inc = 0;
+        char[] rev = new char[length];
+		int inc = 0;
+        for(int i=length-1; i>=0; i--){
           rev[i] = ch[inc];
           inc++;
         }
         System.out.println(rev);
+		System.out.println(rev[kthValue-1]);
     }
 }
